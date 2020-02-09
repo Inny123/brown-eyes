@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello</title>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    
+
     <div class="frontPage mainPage">
       <!-- You can remove this top navigation bar if you don't need it -->
-        <div class="topnav" id="topnavbar"> 
+        <div class="topnav" id="topnavbar">
           <div class="topnav-centered">
               <a href="#"><b>Home</b></a>
               <a href="#contact">Tracker</a>
@@ -23,12 +23,12 @@
               <!-- Topnav bar responsiveness -->
               <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveTopnav()">&#9776;</a>
           </div>
-    
+
         </div>
-      
-      
+
+
     </div>
-    
+
      <div class="secondPage">
        <h2>About Us</h2>
          <p>Fresh Til’ Friday is your little helper when it comes to reducing your Food Waste! </p>
@@ -39,39 +39,63 @@
            <h2> Just been Shopping?</h2>
             <form>
               Product:<br>
-             <input type="text" name="Product">
+             <input type="text" name="Product" id = "Product">
              <br>
-              Expiry Date:<br>
-             <input type="text" name="Expiry Date"><br>
+             Expiry Date:<br>
+             <input type="text" name="Expiry_Date" id = "Expiry_date"><br>
              Quantity:<br>
-             <input type="text" name="Quantity">
+             <input type="text" name="Quantity" id = "Quantity">
              <br>
              </form>
          </div>
-
+           <input type="button" onclick="Update_product()" value="Submit">
      <div class="thirdPage">
             id
             <table style="width:100%">
                <tr>
                <th>Quantity</th>
-               <th>Product</th> 
+               <th>Product</th>
                <th>Days Left</th>
                <th>Remove Item</th>
                </tr>
                <tr>
-               <td>#1</td>
-               <td>Eggs</td> 
-               <td>14</td>
-               <td><input type="checkbox" name="name1" />&nbsp;</td>
+                 <td id = "quantity1"></td>
+                 <td id = "product1"></td>
+                 <td id = "days_left1"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(1)">&nbsp;</td>
                </tr>
                <tr>
-               <td>#2</td>
-               <td>Milk</td> 
-               <td>3</td>
-               <td><input type="checkbox" name="name2" />&nbsp;</td>
+                 <td id = "quantity2"></td>
+                 <td id = "product2"></td>
+                 <td id = "days_left2"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(2)">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td id = "quantity3"></td>
+                 <td id = "product3"></td>
+                 <td id = "days_left3"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(3)">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td id = "quantity4"></td>
+                 <td id = "product4"></td>
+                 <td id = "days_left4"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(4)">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td id = "quantity5"></td>
+                 <td id = "product5"></td>
+                 <td id = "days_left5"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(5)">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td id = "quantity6"></td>
+                 <td id = "product6"></td>
+                 <td id = "days_left6"></td>
+                 <td><input type="button" value="Delete" onclick="delete_item(6)">&nbsp;</td>
                </tr>
             </table>
-          
+
       <div class="bottomCreds">
           <p>© 2020, Fresh Til' Friday</p>
     </div>
