@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jura&display=swap');
 
 
 @keyframes fadein {
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Jura', sans-serif;
     background-color: #FFFFFF;
     text-align: center;
     margin: 0px;
@@ -40,7 +40,7 @@ body {
 
 .mainPage {
     /* Change your background picture */
-    background-image: url("hackathon2.png.png");
+    background-image: url("Images/hackathon2.png.png");
 }
 
 .menuHeading {
@@ -65,14 +65,6 @@ body {
     color: #a88a1d;
 }
 
-.logo {
-    display: block;
-    max-width: 65%;
-    max-height: 65%;
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-}
   
 /* ------------------------------------------ NAVIGATION BAR ------------------------------------------ */
 .topnav {
@@ -191,44 +183,50 @@ body {
 /* ------------------------------------------ SECOND PAGE ------------------------------------------ */
 .secondPage {
     position: relative;
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     background-color: #dbdbdb;
     background-size: cover; 
     background-position: center; 
 }
+.secondPage img {
+    margin-top:40px;
 
-.menuButton {
-    height: auto;
-    width: auto;
-    color: #FFFFFF;
-    background: #a88a1d;
-    border: none;
-    border-radius: 4px;
-    padding: 20px;
+}
+.secondPage .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto ;
+    text-align: left;
     font-size: 20px;
-    position: relative;
-    top: 40px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+}
+.secondPage h3 {
+    font-size: 80px;
+    text-align: left;
+    margin: 0px;
+    margin-top: 30px;
 }
 
-.menuButton:hover {
-    background: #0b4121;
-}
 /*--------------------------------------Input Form----------------------------------------------------*/
-section{
-    display: flex;
-    -ms-flex-align: center;
-    flex-grow: initial;
+.form h2{
+   font-size: 70px;
+   text-align: right;
+   margin: 0px;
+   margin-right: 60px;
+}
+.form {
+    height: 100vh;
+    width: 100%;
+    background-color: #dbdbdb;
+    position: left;
+}
+.form ima {
+    position: right;
 }
 /* ------------------------------------------ THIRD PAGE ------------------------------------------ */
 .thirdPage {
     position: relative;
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     /* background-image: url("pictures/restaurant/dish2.jpeg"); */
     /* background-color: #3e4041; */
