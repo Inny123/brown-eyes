@@ -8,10 +8,11 @@ function responsiveTopnav() {
   }
 }
 
-var count_items = 1;
+var count_items = 0;
 var dict = {};
 
 function Update_product(){
+    count_items = count_items + 1;
     var product = document.getElementById('Product').value;
 
     document.getElementById("product"+count_items).innerHTML = product;
@@ -25,7 +26,9 @@ function Update_product(){
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     document.getElementById("days_left"+count_items).innerHTML = diffDays;
     /*save_data(product,quantity,date1,count_items)*/
-    count_items = count_items + 1;
+    document.getElementById('Product').value = "";
+    document.getElementById('Quantity').value = "";
+    document.getElementById('Expiry_date').value ="";
  }
 
 
@@ -41,11 +44,28 @@ function curday(sp){
     return (mm+sp+dd+sp+yyyy);
 }
 
-function delete_item(i){
-    document.getElementById("product"+i).innerHTML = null;
-    document.getElementById("quantity"+i).innerHTML = null;
-    document.getElementById("days_left"+i).innerHTML = null;
 
+function delete_item(i){
+    if(i<count_items){
+      while(i<count_items){
+        var j = i + 1;
+        document.getElementById("product"+i).innerHTML = document.getElementById("product"+j).innerHTML;
+        document.getElementById("quantity"+i).innerHTML = document.getElementById("quantity"+j).innerHTML;
+        document.getElementById("days_left"+i).innerHTML = document.getElementById("days_left"+j).innerHTML;
+        document.getElementById("days_left"+j).innerHTML = "";
+        document.getElementById("product"+j).innerHTML = "";
+        document.getElementById("quantity"+j).innerHTML = "";
+
+        i = i+1;
+    }
+  }
+    else {
+      document.getElementById("product"+i).innerHTML = "";
+      document.getElementById("quantity"+i).innerHTML = "";
+      document.getElementById("days_left"+i).innerHTML = "";
+
+    }
+    count_items = count_items - 1
 }
 /*
 function save_data(p,q,ed,i){
