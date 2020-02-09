@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/fuse-js-latest@3.1.0/dist/fuse.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search-input"/>
+    <button  id="search-button">Search</button>
+    <div id="container">
+    </div>
+    <script>
+        let data = [
+    {
+      "Food": "Cream (half and half)",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Buttermilk",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Condensed milk (open)",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cheese spread",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Margarine",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Butter",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Evaporated milk (open)",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Dairy milk",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Hard cheese",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cottage cheese",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Processed cheese",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Sour cream",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Whipping cream",
+      "Fresh": 10,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Yogurt",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Eggs",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Egg whites",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Egg yolks",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pasteurised egg",
+      "Fresh": 10,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Hard boiled egg",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Roasts and steaks Chops",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Bacon",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked ham slices",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Corned beef",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Hotdog",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Sausage",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Lunch meat (open)",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked meat",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Casserole containing meat",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Soup containing meat",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Stews",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Gravy",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Chicken or turkey, whole",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Chicken or turkey, pieces",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Ground poultry and giblets",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Duck, goose, game birds",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Fried or boiled chicken",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked poultry casseroles Cooked poultry with broth or gravy Nuggets or patties",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked poultry with broth or gravy",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Nuggets or patties",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cod",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Flounder",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Haddock",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Halibut",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+
+"Food": "Pollack",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Ocean perch",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Rock fish",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Sea trout",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Sole",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mackerel",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mullet",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Salmon",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Smelt",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Swordfish",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Tuna",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Bluefish",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked fish",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Smoked fish",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Shrimp",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mussels",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Oysters",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Lobster",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Crab",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cooked shellfish",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Scallops",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Crayfish",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Squid",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Clams",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Apples",
+      "Fresh": 30,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Apricots",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Avocados",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Bananas",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Berries",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cherries",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cranberries",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Grapes",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Guavas",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Kiwis",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Lemons, limes, oranges, grapefruit Mangos",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Melons",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Nectarines",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Papayas",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Peaches",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pears",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pineapples",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Plantains",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Plums",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Rhubarb",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Limes",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Oranges",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Grapefruit",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mangoes",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Artichokes",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Broccoli",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cucumbers",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Eggplant",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Green beans",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Collard greens",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Jicama",
+      "Fresh": 21,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Kohlrabi",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Lettuce and salad greens",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mushrooms",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Green onions",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Peas",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Parsley",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Yuca",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Zucchini",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+"Food": "Tomatoes",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Tomatillos",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Squash",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Peppers",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Radishes",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Okra",
+      "Fresh": 5,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Lima beans",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Aubergine",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Asparagus",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Beetroot",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Corn",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Celery",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cauliflower",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Carrots",
+      "Fresh": 14,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cabbage",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Brussel sprouts",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Bread, yeast",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Biscuits",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Muffins",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Quick breads",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pancakes",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Rolls, yeast",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Waffles",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Angel",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Chiffon and sponge",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Fruitcake",
+      "Fresh": 90,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pound",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Iced layer cake",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Baked cookies",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Cheesecake",
+      "Fresh": 6,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Unbaked cookie dough",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Danish",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Fruit pie",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mincemeat pie",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Unbaked fruit pie",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Doughnuts",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Chiffon pie",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Pumpkin pie",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Expressed breast milk",
+      "Fresh": 4,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Homemade baby foods",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Strained meat and vegetable combination",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Strained fruits and vegetables",
+      "Fresh": 3,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Formula mixed with water",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Strained meat and eggs",
+      "Fresh": 1,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Fresh pasta",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Mayonnaise",
+      "Fresh": 60,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Sandwiches",
+      "Fresh": 2,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Tofu",
+      "Fresh": 7,
+      "": "",
+      "__1": "",
+      "__2": ""
+    },
+    {
+      "Food": "Bottled salad dressing",
+      "Fresh": 90,
+      "": "",
+      "__1": "",
+      "__2": "album"
+    }]
+    let options = {
+  shouldSort: true,
+  threshold: 0.1,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  keys: [
+    "Food"
+  ]
+};
+var fuse = new Fuse(data, options);
+var result = fuse.search("the");
+console.log(result)
+document.getElementById("search-button").addEventListener("click", search)
+    function search() {
+        let input = document.getElementById("search-input")
+        let results = fuse.search(input.value);
+        [...document.querySelectorAll("#container *")].forEach(e => e.remove())
+        results.forEach( result => {
+            document.getElementById("container").innerHTML += `<h1>${result.Food} - ${result.Fresh}</h1>`
+        })
+    }
+    </script>
+</body>
+</html>

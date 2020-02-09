@@ -16,9 +16,9 @@
         <div class="topnav" id="topnavbar">
           <div class="topnav-centered">
               <a href="#"><b>Home</b></a>
-              <a href="#contact">Tracker</a>
-              <a href="#opening">About</a>
-              <a href="#map">Help</a>
+              <a href="#tracker">Tracker</a>
+              <a href="#about">About</a>
+              <a href="search.html">SearchFoods</a>
               <!-- Topnav bar responsiveness -->
               <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveTopnav()">&#9776;</a>
             </div>
@@ -28,33 +28,36 @@
 <!---------------Second page----------->
       <div class="secondPage">
          <img src="Images/image.png" alt="" />"
-         <div class="container">
+         <div class="container" id=about>
           <h3>About Us</h3>
              <p>Fresh Til’ Friday is your little helper when it comes to reducing your Food Waste! </p>
              <p>Hundreds of thousands of tonnes of food is thrown out each year while millions starve. It sits in landfill, releasing methane gas into our atmosphere. Fresh Til’ Friday want this to change. We offer a waste management solution which allows you to track your expiring produce. Your eggs only Fresh til’ Friday? No sweat, we’ll remind you to eat them before they go bad!Our vision is a world with less food poverty, less methane emissions and of course saving our users a bit of well-earned dosh.</p>
              <p>Our team comprises of students who know only too well how difficult it is to balance budgets and a busy lifestyle when trying to reduce food waste. This is what inspired us to produce this tool.</p>
          </div>
       </div>
-      <div class="form">
+      <div class="form" id=tracker>
+        <img src="Images/image-2.png" alt="" />
+
         <div>
           <h2> Just been Shopping?</h2>
-             <p> Dont forget to add your products below!</p>
-             <img src="Images/image-2.png" alt="" />"
+             <p> Don't forget to add your products below!</p>
                <form>
                  Product:<br>
-                <input type="text" name="Product" id = "Product">
+                <input type="text" name="Product" id = "Product"placeholder="Apple">
                 <br>
                 Expiry Date:<br>
-                <input type="text" name="Expiry_Date" id = "Expiry_date"><br>
+                <input type="text" name="Expiry_Date" id = "Expiry_date" placeholder="MM/DD/YYYY"><br>
                 Quantity:<br>
-                <input type="text" name="Quantity" id = "Quantity">
+                <input type="text" name="Quantity" id = "Quantity"placeholder="3">
                 <br>
-                </form>
-              <input type="button" onclick="Update_product()" value="Submit">
+                <input type="button" onclick="Update_product()" value="Submit">
+                </form> 
         </div>
+
       </div>
 <!-------------Third Page----------------->
      <div class="thirdPage">
+       <h3>In your kitchen you will find:</h3>
             <table style="width:100%">
                <tr>
                <th>Quantity</th>

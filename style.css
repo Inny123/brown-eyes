@@ -90,7 +90,7 @@ body {
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn{
-    background-color: #7ce9af;
+    background-color: #a88a1d;
     color: #FFFFFF;
 }
 
@@ -201,7 +201,7 @@ body {
     font-size: 20px;
 }
 .secondPage h3 {
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
     margin: 0px;
     margin-top: 30px;
@@ -215,18 +215,26 @@ body {
    margin-right: 60px;
 }
 .form {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     background-color: #dbdbdb;
-    position: left;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
 }
-.form ima {
-    position: right;
+.form img {
+    /* float: left; */
+    margin: 0px;
+    margin-left: 10px;
+    height: 65%;
+    width: 600px;
 }
+
 /* ------------------------------------------ THIRD PAGE ------------------------------------------ */
 .thirdPage {
     position: relative;
-    height: 130vh;
+    height: 90vh;
     width: 100%;
     /* background-image: url("pictures/restaurant/dish2.jpeg"); */
     /* background-color: #3e4041; */
@@ -235,6 +243,17 @@ body {
     background-position: center; 
     background-attachment: fixed;
     background-repeat: no-repeat;
+    margin: 0px;
+    margin-top: -80px;
+    
+}
+.thirdPage h3{
+    text-align: left;
+    font-size: 40px;
+    background-color: #dbdbdb;
+    margin: 0px;
+    margin-bottom: 50px;
+    margin-left: 30px;
 }
 
 * {
@@ -273,17 +292,17 @@ body {
 
 table {
     padding: 10px;
-    width: 1000%;
+    width: calc(100% - 120px);
     border-collapse: collapse;
-
   }
   
   th, td {
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #1ca35a;
+
   }
   th {
       height: 50px;
   }
-  tr:hover {background-color: #f5f5f5;}
+  tr:hover {background-color: #1ca35a; }
