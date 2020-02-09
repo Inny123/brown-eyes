@@ -13,22 +13,42 @@ var dict = {};
 
 function Update_product(){
     count_items = count_items + 1;
+
+
     var product = document.getElementById('Product').value;
+    if(product == ""){
+      alert("Product field is empty.");
+
+    }
 
     document.getElementById("product"+count_items).innerHTML = product;
 
     var quantity = document.getElementById('Quantity').value;
     document.getElementById("quantity"+count_items).innerHTML = quantity;
+    if(quantity == ""){
+      alert("Product field is empty.");
+
+    }
 
     const date1 = new Date(document.getElementById('Expiry_date').value);
+    if(date1 == ""){
+      alert("Expiry date field is empty.");
+
+    }
     const date2 = new Date(curday("/"));
-    const diffTime = Math.abs(date2 - date1);
+    const diffTime = date1 - date2;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("days_left"+count_items).innerHTML = diffDays;
+    if (diffDays < 0){
+      document.getElementById("days_left"+count_items).innerHTML = "Expired";
+    }else{
+      document.getElementById("days_left"+count_items).innerHTML = diffDays;
+    }
+    
     /*save_data(product,quantity,date1,count_items)*/
     document.getElementById('Product').value = "";
     document.getElementById('Quantity').value = "";
     document.getElementById('Expiry_date').value ="";
+    date_check(product,diffDays);
  }
 
 
@@ -66,6 +86,24 @@ function delete_item(i){
 
     }
     count_items = count_items - 1
+}
+
+function date_check(p,d){
+  if (d == 0){
+    alert(p+" "+"is just about to expire!");
+  }
+
+  else if(d < 0){
+    alert(p+" "+"expired!");
+  }
+
+}
+
+
+/*
+function color_change(){
+    document.getElementById("row1").style.borderColor = "red";
+
 }
 /*
 function save_data(p,q,ed,i){
